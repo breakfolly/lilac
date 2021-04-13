@@ -5,6 +5,9 @@ endif
 
 let s:plugin_root_dir = fnamemodify(resolve(expand('<sfile>:p')), ':h')
 
+command! -nargs=* Lilac python3 lilac.LilacServer(<f-args>)
+command! -nargs=* LilacClient python3 lilac.LilacClient(<f-args>)
+
 python3 << EOF
 
 import sys
@@ -19,3 +22,4 @@ EOF
 function! Sample()
 	python3 lilac.print_test()
 endfunction
+
